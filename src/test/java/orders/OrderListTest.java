@@ -58,6 +58,6 @@ public class OrderListTest {
         ArrayList<String> ordersList = getOrderListResponse.extract().path("orders");
 
         assertThat("The status code is " + statusCode, statusCode, equalTo(SC_OK));
-        assertThat("Some data were wrong", ordersList, notNullValue());
+        assertThat("List of orders is empty", ordersList.size() > 0);
     }
 }
